@@ -25,6 +25,11 @@ Route::domain(config('blog.domain'))
         Route::get('/sitemap.xml', [BlogController::class, 'sitemap'])->name('sitemap');
         Route::get('/robots.txt', [RobotsController::class, 'index'])->name('robots');
         Route::get('/docs/{document}', [BlogController::class, 'document'])->name('document');
+
+        foreach (config('blog.redirects') as $from => $to) {
+            Route::permanentRedirect('/'.$from, '/'.$to);
+        }
+
         Route::get('/tags/{tag:slug}', [BlogController::class, 'tag'])->name('tag');
         Route::get('/{post:slug}', [BlogController::class, 'show'])->name('post');
     });

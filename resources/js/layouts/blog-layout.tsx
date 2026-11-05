@@ -55,8 +55,8 @@ export default function BlogLayout({ seo, children }: PropsWithChildren<Props>) 
             </Head>
 
             <div className="min-h-screen bg-[#060e20] font-['Inter']">
-                <header className="sticky top-0 z-50 border-b border-[#2b4680]/20 bg-[#060e20]/80 backdrop-blur-xl">
-                    <nav className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-4 font-['Manrope'] text-sm font-medium tracking-tight md:px-8">
+                <header className="sticky top-0 z-50 bg-[#060e20]/70 shadow-[0_40px_40px_rgba(222,229,255,0.04)] backdrop-blur-xl">
+                    <nav className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-8 py-4 font-['Manrope'] text-sm font-medium tracking-tight">
                         <Link
                             href={toPath(blogIndex.url())}
                             className="shrink-0 text-xl font-bold tracking-tighter text-[#dee5ff] transition-colors hover:text-[#06b77f]"
@@ -64,14 +64,7 @@ export default function BlogLayout({ seo, children }: PropsWithChildren<Props>) 
                             Marijan Kopčić<span className="text-[#06b77f]">/blog</span>
                         </Link>
 
-                        <div className="hidden items-center gap-7 lg:flex">
-                            <Link
-                                href={toPath(blogIndex.url())}
-                                className="flex items-center gap-1.5 border-b border-[#bdc2ff]/30 font-semibold text-[#bdc2ff]"
-                            >
-                                <BookOpen size={16} />
-                                Blog
-                            </Link>
+                        <div className="hidden items-center gap-8 lg:flex">
                             {PORTFOLIO_SECTIONS.map(({ name, anchor, icon: Icon }) => (
                                 <a
                                     key={anchor}
@@ -82,10 +75,17 @@ export default function BlogLayout({ seo, children }: PropsWithChildren<Props>) 
                                     {name}
                                 </a>
                             ))}
+                            <Link
+                                href={toPath(blogIndex.url())}
+                                className="flex items-center gap-1.5 border-b border-[#bdc2ff]/30 font-semibold text-[#bdc2ff]"
+                            >
+                                <BookOpen size={16} />
+                                Blog
+                            </Link>
                         </div>
 
-                        <div className="hidden items-center gap-4 lg:flex">
-                            <SocialLinks className="hidden xl:flex" />
+                        <div className="hidden items-center gap-3 lg:flex">
+                            <SocialLinks className="mr-2 hidden xl:flex" />
                             <a
                                 href={portfolioUrl}
                                 className="flex items-center gap-1.5 rounded-md bg-[#06b77f] px-5 py-1.5 text-sm font-medium text-[#001a12] transition-all duration-200 ease-in-out hover:scale-105 hover:bg-[#05a36f]"
@@ -108,14 +108,7 @@ export default function BlogLayout({ seo, children }: PropsWithChildren<Props>) 
 
                     {mobileMenuOpen && (
                         <div className="border-t border-[#2b4680]/20 bg-[#05183c] lg:hidden">
-                            <div className="mx-auto max-w-6xl space-y-1 px-6 py-6 font-['Manrope']">
-                                <Link
-                                    href={toPath(blogIndex.url())}
-                                    className="flex items-center gap-3 border-b border-[#2b4680]/20 py-3 font-semibold text-[#bdc2ff]"
-                                >
-                                    <BookOpen size={20} />
-                                    Blog
-                                </Link>
+                            <div className="mx-auto max-w-7xl space-y-1 px-8 py-6 font-['Manrope']">
                                 {PORTFOLIO_SECTIONS.map(({ name, anchor, icon: Icon }) => (
                                     <a
                                         key={anchor}
@@ -126,6 +119,13 @@ export default function BlogLayout({ seo, children }: PropsWithChildren<Props>) 
                                         {name}
                                     </a>
                                 ))}
+                                <Link
+                                    href={toPath(blogIndex.url())}
+                                    className="flex items-center gap-3 border-b border-[#2b4680]/20 py-3 font-semibold text-[#bdc2ff]"
+                                >
+                                    <BookOpen size={20} />
+                                    Blog
+                                </Link>
                                 <div className="flex items-center justify-between gap-4 pt-5">
                                     <SocialLinks />
                                     <a

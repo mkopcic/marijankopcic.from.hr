@@ -28,4 +28,31 @@ return [
 
     'per_page' => 9,
 
+    /*
+    |--------------------------------------------------------------------------
+    | Permanent Redirects
+    |--------------------------------------------------------------------------
+    |
+    | Retired blog paths mapped to their replacements, answered with a 301 so
+    | links and search engine entries for the old URLs keep working. The
+    | interview series was first published under Croatian slugs and tags.
+    |
+    */
+
+    'redirects' => [
+        'senior-backend-intervju-oop-i-php' => 'senior-backend-interview-oop-and-php',
+        'senior-backend-intervju-baze-podataka' => 'senior-backend-interview-databases',
+        'senior-backend-intervju-rest-i-api' => 'senior-backend-interview-rest-and-api',
+        'senior-backend-intervju-arhitektura' => 'senior-backend-interview-architecture',
+        'senior-backend-intervju-sigurnost' => 'senior-backend-interview-security',
+        'senior-backend-intervju-laravel' => 'senior-backend-interview-laravel',
+        'senior-backend-intervju-kada-ne-znas-odgovor' => 'senior-backend-interview-when-you-dont-know-the-answer',
+        'senior-backend-intervju-trik-pitanja' => 'senior-backend-interview-trick-questions',
+        'tags/intervju' => 'tags/interview',
+        'tags/baze-podataka' => 'tags/database',
+        'tags/arhitektura' => 'tags/architecture',
+        'tags/sigurnost' => 'tags/security',
+        'tags/karijera' => 'tags/career',
+    ],
+
 ];
